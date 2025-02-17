@@ -34,7 +34,8 @@ AC analysis, or small-signal analysis, is performed to evaluate the gain of the 
 3. Configuration:
    - Select the MOSFET in the schematic and attach the tsmc model. Name the MOSFET CMOSN . Set the length to 1.8µm and width to 1.7µm. then select the resistor of 1kohm and voltage source of 1.8v and 0.9v. set 
     up the circuit as in the circuit diagram.
-## Circuit diagram 
+## Circuit diagram
+![Image](https://github.com/user-attachments/assets/32c4bb76-9c75-4343-b922-34e50bfb238f)
 
 
 4. DC Analysis:
