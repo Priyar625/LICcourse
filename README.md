@@ -70,10 +70,10 @@ By following these steps, you will perform the DC, transient, and AC analysis of
 Specifications: 180 nm, tsmc, VDD = 1.8 V, Power budget = 50 uW, do tthe DC analysis, Transient analysis, AC analysis,Extract the parameters- DC operating point, DC analysis, gain,  power
 # DC Analysis
 ![Image](https://github.com/user-attachments/assets/391f92a2-eac8-4ff7-b00b-dd05635d026e)
-# Transient analysis
 ![Image](https://github.com/user-attachments/assets/eef14870-5c6c-40d5-8c67-d7abee8c5187)
-
+# Transient analysis
 ![Image](https://github.com/user-attachments/assets/fd520afc-66e6-42ee-980e-b71b05942d04)
+![Image](https://github.com/user-attachments/assets/9406a59c-e375-447d-9e06-105338945a83)
 # AC Analysis
 ![Image](https://github.com/user-attachments/assets/2cd69681-e8c3-40f1-8aac-c6840a4fcb69)
 
