@@ -34,8 +34,9 @@ AC analysis, or small-signal analysis, is performed to evaluate the gain of the 
 3. Configuration:
    - Select the MOSFET in the schematic and attach the tsmc model. Name the MOSFET CMOSN . Set the length to 1.8µm and width to 1.7µm. then select the resistor of 1kohm and voltage source of 1.8v and 0.9v. set 
     up the circuit as in the circuit diagram.
+example:
 ## Circuit diagram
-![Image](https://github.com/user-attachments/assets/32c4bb76-9c75-4343-b922-34e50bfb238f)
+   ![Image](https://github.com/user-attachments/assets/32c4bb76-9c75-4343-b922-34e50bfb238f)
 
 
 4. DC Analysis:
@@ -44,7 +45,7 @@ AC analysis, or small-signal analysis, is performed to evaluate the gain of the 
    - Go to the Simulate menu, select Edit Simulation Command, choose DC Analysis, and click OK (.op).
    - Press Run to obtain the*DC operating point, output voltage (Vout), and drain current (Id).
     simulation
-![Image](https://github.com/user-attachments/assets/975c5b9b-2687-4aaa-99b9-c6e1d1d9d725)
+    ![Image](https://github.com/user-attachments/assets/975c5b9b-2687-4aaa-99b9-c6e1d1d9d725)
 
 
 5. Transient Analysis:
@@ -54,11 +55,12 @@ AC analysis, or small-signal analysis, is performed to evaluate the gain of the 
      simulation
      ![Image](https://github.com/user-attachments/assets/338c3594-c29a-42fd-80b6-22717bd1e6e2)
 
-![Image](https://github.com/user-attachments/assets/ecb62034-5460-4af4-90b9-c88be4b8ffd9)
+     ![Image](https://github.com/user-attachments/assets/ecb62034-5460-4af4-90b9-c88be4b8ffd9)
 
    6.AC Analysis:
    - Go to Spice Directive and provide the library file path for the simulator to access the data.
-   - Go to the Simulate menu, select Edit Simulation Command, and choose AC Analysis. Set the sweep type to Decade, with 20 points per decade, and the frequency range from **0.1Hz to 1THz**.
+   - Go to the Simulate menu, select Edit Simulation Command, and choose AC Analysis. Set the sweep type to Decade, with 20 points per decade, and the frequency 
+     range from **0.1Hz to 1THz**.
    - Click OK (.ac dec 20 0.1 1T) and then Run to analyze the gain and frequency response of the circuit.
      simulation
      ![Image](https://github.com/user-attachments/assets/7ce515dd-1777-496e-b542-939973d7fda7)
@@ -67,14 +69,32 @@ AC analysis, or small-signal analysis, is performed to evaluate the gain of the 
 By following these steps, you will perform the DC, transient, and AC analysis of the MOSFET circuit using LTSpice, allowing you to observe the operating point, time response, and frequency characteristics.
 
 ## Question 1
-Specifications: 180 nm, tsmc, VDD = 1.8 V, Power budget = 50 uW, do tthe DC analysis, Transient analysis, AC analysis,Extract the parameters- DC operating point, DC analysis, gain,  power
-# DC Analysis
-![Image](https://github.com/user-attachments/assets/391f92a2-eac8-4ff7-b00b-dd05635d026e)
-![Image](https://github.com/user-attachments/assets/eef14870-5c6c-40d5-8c67-d7abee8c5187)
-# Transient analysis
-![Image](https://github.com/user-attachments/assets/fd520afc-66e6-42ee-980e-b71b05942d04)
-![Image](https://github.com/user-attachments/assets/9406a59c-e375-447d-9e06-105338945a83)
-# AC Analysis
-![Image](https://github.com/user-attachments/assets/2cd69681-e8c3-40f1-8aac-c6840a4fcb69)
+Specifications: 180 nm, tsmc, VDD = 1.8 V, Power budget = 50 uW, do the DC analysis, Transient analysis, AC analysis,Extract the parameters- DC operating point, , gain.
+   # circuit diagram
+   ![Image](https://github.com/user-attachments/assets/391f92a2-eac8-4ff7-b00b-dd05635d026e)
+   # DC Analysis
+   ![Image](https://github.com/user-attachments/assets/eef14870-5c6c-40d5-8c67-d7abee8c5187)
+   # Transient analysis
+   ![Image](https://github.com/user-attachments/assets/fd520afc-66e6-42ee-980e-b71b05942d04)
+   ![Image](https://github.com/user-attachments/assets/9406a59c-e375-447d-9e06-105338945a83)
+   # AC Analysis
+   ![Image](https://github.com/user-attachments/assets/2cd69681-e8c3-40f1-8aac-c6840a4fcb69)
+## Question 2
+Replace the resistor with a PMOS in Question 1 and do the DC analysis, Transient analysis, AC analysis,Extract the parameters- DC operating point,  gain, and verify the circuit.
+   # circuit diagram
+   ![Image](https://github.com/user-attachments/assets/91d66ec2-e201-435c-b9ef-93cbc68c213c)
+    
+   # DC Analysis
+   ![Image](https://github.com/user-attachments/assets/5f8b9804-5437-4cca-b35c-552a660f2e39)
+   # Transient analysis
+   ![Image](https://github.com/user-attachments/assets/f74f3e20-542f-4cdf-baf8-ebfc1f543f7e)
+    
+   ![Image](https://github.com/user-attachments/assets/2d782cd2-404b-43bf-bd8f-752cd933e92e)
+   # AC Analysis
+   ![Image](https://github.com/user-attachments/assets/045ffa52-1804-4731-9d67-371aa24a0795)
+
+
+
+
 
 
