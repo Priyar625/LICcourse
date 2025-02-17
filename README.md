@@ -43,15 +43,25 @@ AC analysis, or small-signal analysis, is performed to evaluate the gain of the 
    - Apply a DC voltage of Vdd = 1.8V and Vgs = 0.9V.
    - Go to the Simulate menu, select Edit Simulation Command, choose DC Analysis, and click OK (.op).
    - Press Run to obtain the*DC operating point, output voltage (Vout), and drain current (Id).
+    simulation
+![Image](https://github.com/user-attachments/assets/975c5b9b-2687-4aaa-99b9-c6e1d1d9d725)
+
 
 5. Transient Analysis:
    - Apply a sine wave input with Vgs = 0.9V, amplitude = 50mV, and frequency = 1kHz by going to the Advanced menu in the Voltage Source settings.
    - Go to the Simulate menu, select Edit Simulation Command, choose Transient Analysis, and set the Stop Time to **10ms (.tran 10m).
    - Press Run to visualize the circuit's response to a time-varying signal.
+     simulation
+     ![Image](https://github.com/user-attachments/assets/338c3594-c29a-42fd-80b6-22717bd1e6e2)
+
+![Image](https://github.com/user-attachments/assets/ecb62034-5460-4af4-90b9-c88be4b8ffd9)
 
    6.AC Analysis:
    - Go to Spice Directive and provide the library file path for the simulator to access the data.
    - Go to the Simulate menu, select Edit Simulation Command, and choose AC Analysis. Set the sweep type to Decade, with 20 points per decade, and the frequency range from **0.1Hz to 1THz**.
    - Click OK (.ac dec 20 0.1 1T) and then Run to analyze the gain and frequency response of the circuit.
+     simulation
+     ![Image](https://github.com/user-attachments/assets/7ce515dd-1777-496e-b542-939973d7fda7)
+     
 
 By following these steps, you will perform the DC, transient, and AC analysis of the MOSFET circuit using LTSpice, allowing you to observe the operating point, time response, and frequency characteristics.
