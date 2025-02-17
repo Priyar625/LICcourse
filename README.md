@@ -1,10 +1,10 @@
 # LICcourse
-##Experiment-1
+## Experiment-1
 
 ## Aim
 Perform DC, transient, and AC analysis of a CS amplifier in LTSpice by setting up biasing, simulating the operating point for DC, using a pulse for transient, and applying an AC signal with small-signal analysis to extract parameters like Id,Vgs, voltage gain.
 
-##Components required:
+## Components required:
 Mosfet(nmos4 ,pmos4 ), Resistor(1k ohm), voltage supply(1.8V,0.9V) and connecting wires.
 
 ## Theory
