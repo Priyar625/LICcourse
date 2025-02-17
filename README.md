@@ -35,9 +35,12 @@ AC analysis, or small-signal analysis, is performed to evaluate the gain of the 
    - Select the MOSFET in the schematic and attach the tsmc model. Name the MOSFET CMOSN . Set the length to 1.8µm and width to 1.7µm. then select the resistor of 1kohm and voltage source of 1.8v and 0.9v. set 
     up the circuit as in the circuit diagram.
 example:
+
 ## Circuit diagram
+
    ![Image](https://github.com/user-attachments/assets/32c4bb76-9c75-4343-b922-34e50bfb238f) 
-    specifications Vin = 0.9v, Vdd=1.8v, Rd=1kohm, W=1um, L=180nm, Vth=0.366v
+    
+   specifications Vin = 0.9v, Vdd=1.8v, Rd=1kohm, W=1um, L=180nm, Vth=0.366v
 
 
 4. DC Analysis:
@@ -47,6 +50,7 @@ example:
    - Press Run to obtain the*DC operating point, output voltage (Vout), and drain current (Id).
     simulation
     ![Image](https://github.com/user-attachments/assets/975c5b9b-2687-4aaa-99b9-c6e1d1d9d725)
+
     the operating point is Vds=1.647v, Id=0.152mA,
     here Vgs = Vg-Vs = 0.9v, Vgs>Vth
      Vov=Vgs-Vth = 0.9- 0.366 = 0.534v,  Vds>Vov
@@ -58,9 +62,13 @@ example:
    - Go to the Simulate menu, select Edit Simulation Command, choose Transient Analysis, and set the Stop Time to **10ms (.tran 10m).
    - Press Run to visualize the circuit's response to a time-varying signal.
      simulation
+     
      input waveform
+     
      ![Image](https://github.com/user-attachments/assets/338c3594-c29a-42fd-80b6-22717bd1e6e2)
+     
      output waveform
+     
      ![Image](https://github.com/user-attachments/assets/ecb62034-5460-4af4-90b9-c88be4b8ffd9)
    
      
@@ -68,10 +76,12 @@ example:
    6.AC Analysis:
    - Go to Spice Directive and provide the library file path for the simulator to access the data.
    - Go to the Simulate menu, select Edit Simulation Command, and choose AC Analysis. Set the sweep type to Decade, with 20 points per decade, and the frequency 
-     range from **0.1Hz to 1THz**.
+     range from 0.1Hz to 1THz.
    - Click OK (.ac dec 20 0.1 1T) and then Run to analyze the gain and frequency response of the circuit.
      simulation
+     
      ![Image](https://github.com/user-attachments/assets/7ce515dd-1777-496e-b542-939973d7fda7)
+     
      gm=0.569mS, Av=Vo/Vin = 2.13 v/v
      
      observations:
@@ -108,35 +118,55 @@ The simulation of the n-channel MOSFET shows that under the DC analysis, the dev
 Variation of Drain Current with Width (W): When the width of the MOSFET is increased, the drain current also increases. This behavior is expected because a larger width increases the cross-sectional area available for current flow, allowing more current to pass through the MOSFET. The results highlight that the drain current is directly proportional to the width of the MOSFET, reinforcing the fact that larger devices with greater width provide higher current-carrying capability, which is a crucial factor in designing high-current or high-gain amplifiers.
      
 ## Question 1
+
 Specifications: 180 nm technology, tsmc, VDD = 1.8 V, Power budget = 50 uW, do the DC analysis, Transient analysis, AC analysis,Extract the parameters- DC operating point, , gain.
+
    # circuit diagram
+   
    ![Image](https://github.com/user-attachments/assets/391f92a2-eac8-4ff7-b00b-dd05635d026e)
+   
    Vdd=1.8v, P= 50uW, Vin=0.9v, Vth=0.366v, Rd=1kohm
    P=Vdd.Id 
    Id=P/Vdd = 50u/1.8 = 27.77uA
    W=1.7um, L=1.8um
   
    # DC Analysis
+   
    ![Image](https://github.com/user-attachments/assets/eef14870-5c6c-40d5-8c67-d7abee8c5187)
+   
    here the operating point is Vds= 1.77226v , Id = 27.7uA 
     here Vgs = Vg-Vs = 0.9v, Vgs>Vth
     Vov=Vgs-Vth = 0.9- 0.366 = 0.534v,  Vds>Vov
     mosfet is in saturation region.
+    
    # Transient analysis
+   
    Input waveform
+
    ![Image](https://github.com/user-attachments/assets/fd520afc-66e6-42ee-980e-b71b05942d04)
+   
    output waveform
+   
    ![Image](https://github.com/user-attachments/assets/9406a59c-e375-447d-9e06-105338945a83)
+   
    there is a 180 degree phaseshift between input and output.
+   
    # AC Analysis
+   
    ![Image](https://github.com/user-attachments/assets/2cd69681-e8c3-40f1-8aac-c6840a4fcb69)
+   
    Av=1.99 v/v
    
    
 ## Question 2
+
 Replace the resistor with a PMOS in Question 1 and do the DC analysis, Transient analysis, AC analysis,Extract the parameters- DC operating point,  gain, and verify the circuit.
+
    # circuit diagram
+   
    ![Image](https://github.com/user-attachments/assets/91d66ec2-e201-435c-b9ef-93cbc68c213c)
+
+   
    Vdd=1.8v, P= 50uW, Vin=0.9v, Vth=0.366v, Rd=1kohm, Vtp=-0.3906v
    P=Vdd.Id 
    Id=P/Vdd = 50u/1.8 = 27.77uA
@@ -157,6 +187,8 @@ Replace the resistor with a PMOS in Question 1 and do the DC analysis, Transient
    
    # DC Analysis
    ![Image](https://github.com/user-attachments/assets/5f8b9804-5437-4cca-b35c-552a660f2e39)
+
+   
    here the operating point is Vds= 1.772v , Id = 27.7uA 
     for NMOSFET, Vgs = Vg-Vs = 0.9v, Vgs<Vth
     Vov=Vgs-Vth = 0.9- 0.366 = 0.534v,  Vds>Vov
@@ -167,13 +199,22 @@ Replace the resistor with a PMOS in Question 1 and do the DC analysis, Transient
    
    # Transient analysis
    input waveform
+   
    ![Image](https://github.com/user-attachments/assets/f74f3e20-542f-4cdf-baf8-ebfc1f543f7e)
-    output waveform
+   
+   output waveform
+   
    ![Image](https://github.com/user-attachments/assets/2d782cd2-404b-43bf-bd8f-752cd933e92e)
+   
    there is a 180 degree phaseshift between input and output.
+   
    # AC Analysis
+   
    ![Image](https://github.com/user-attachments/assets/045ffa52-1804-4731-9d67-371aa24a0795)
-    Av=Vo/Vin = 1.99 v/v
+   
+   Av=Vo/Vin = 1.99 v/v
+
+   
  # Inference
 In both Question 1 and Question 2, the MOSFET-based amplifier circuit was analyzed through DC, transient, and AC analyses. In Question 1, the circuit uses a resistor as the load, while in Question 2, the resistor is replaced by a PMOSFET. This replacement is done to improve the overall performance of the amplifier. The PMOS transistor acts as an active load, which enhances the voltage gain and linearity of the circuit, offering a better dynamic load than a static resistor. The PMOS load ensures that the output remains more stable and less affected by supply voltage fluctuations, maintaining a higher degree of amplification efficiency. Additionally, using a PMOS transistor reduces power consumption compared to a resistor because the transistor can more effectively control the current flow, avoiding the heat dissipation seen with resistors. The DC analysis confirms the operating point of both circuits, showing that both the NMOS and PMOS configurations are in the saturation region, with a drain current of 27.7 µA and a drain-source voltage of 1.772V. In transient analysis, both circuits exhibit a 180-degree phase shift between the input and output signals, indicating their behavior as common-source amplifiers, where the input signal is inverted. The AC analysis shows a voltage gain of 1.99 V/V for both configurations, demonstrating the circuit's effectiveness in signal amplification. Ultimately, the substitution of the PMOSFET transistor for the resistor significantly improves the performance by providing a more efficient and linear load, enhancing voltage gain, output swing, and power efficiency. This modification enables the amplifier to perform better in amplification applications, confirming that both NMOSFET and PMOSFET can effectively operate in such circuits with similar results.
     
