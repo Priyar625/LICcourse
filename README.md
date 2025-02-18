@@ -155,7 +155,7 @@ Specifications: 180 nm technology, tsmc, VDD = 1.8 V, Power budget = 50 uW, do t
    
 ![Image](https://github.com/user-attachments/assets/2cd69681-e8c3-40f1-8aac-c6840a4fcb69)
    
-   Av=1.99 v/v
+   Gain_dB: 20*log10(V(vout)/V(n002))=(30.5363346037dB,125.783104002°)
    
    
 ## Question 2
@@ -211,9 +211,9 @@ Replace the resistor with a PMOS in Question 1 and do the DC analysis, Transient
    
    # AC Analysis
    
-  ![Image](https://github.com/user-attachments/assets/045ffa52-1804-4731-9d67-371aa24a0795)
+ ![Image](https://github.com/user-attachments/assets/54eef04f-2c66-4460-bbac-350d2a379039)
    
-   Av=Vo/Vin = 1.99 v/v
+   Gain_dB: 20*log10(V(vout)/V(n003))=(30.633828697dB,121.49377984°) at 1000
 
    
  # Inference
