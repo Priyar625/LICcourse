@@ -213,7 +213,7 @@ Replace the resistor with a PMOS in Question 1 and do the DC analysis, Transient
    
  ![Image](https://github.com/user-attachments/assets/54eef04f-2c66-4460-bbac-350d2a379039)
    
-   Gain_dB: 20*log10(V(vout)/V(n003))=(30.633828697dB,121.49377984°) at 1000
+   Gain_dB: 20*log10(V(vout)/V(n003))=(36.633828697dB,121.49377984°) at 1000
 
    
  # Inference
