@@ -58,21 +58,58 @@ The output voltage range is restricted by the supply voltage (VDD) and the trans
 
 ![Image](https://github.com/user-attachments/assets/8a77f448-3183-4958-b585-f9eddcffca64)
 
-Length( of M1 and M2) = L = 180nm
+Length( of M1 and M2) = L = 180.1nm
 
-Width ( of M! and M2) = W = 6.4125um
+Width ( of M! and M2) = W = 6.415um
+
+for mosfet M1:
+
+VoCM1 = 1.25v
+
+ViCM1 = 1.2V
+
+Id(M1) = 0.4999 mA
+
+Vtn =  0.495v
+
+VGS = 1.2 - 0.4 = 0.8v
+
+VDD = IdRd + VDS +Vp
+
+VDS = 2.2 - 0.4 - 0.95
+
+VDS = 0.85 V
+
+for mosfet M2:
+
+VoCM2 = 1.25v
+
+ViCM2 = 1.2V
+
+Id(M2) = 0.4999 mA
+
+Vtn =  0.495v
+
+VGS = 1.2 - 0.4 = 0.8v
+
+VDD = IdRd + VDS +Vp
+
+VDS = 2.2 - 0.4 - 0.95
+
+VDS = 0.85 V
+
 
 To verify the mosfets are in saturation region : VGD <= VTn
 
-(1.2V -1.25V) <= 0.495V
+(1.2V -1.25V) <=  0.495V
 
--0.05V <= 0.495V
+-0.05V <=  0.495V
 
 and VDS >= Vov
 
-(1.25 - 0.4) >= (1.2 - 0.4) - 0.495
+(1.25 - 0.4) >= (1.2 - 0.4) -  0.495
 
-0.85V >= 0.305V
+0.85V >= 0.305Vv
 
 Therefore mosfets are in saturation region .
 
@@ -86,7 +123,7 @@ The Q-points of both the mosfets(M1 and M2) are (0.85V, 0.5mA)
 
 ![Image](https://github.com/user-attachments/assets/b9bafbd5-63b5-4c97-9675-c1ea1067817e)
 
-so, there is a slight variation in the Q-point as (0.644V, 0.576mA)
+so, there is a slight variation in the Q-point as (0.6456V, 0.576mA)
 
 ##Transient Analysis: 
 
@@ -104,15 +141,15 @@ From the graph ,we can observe the 180 degree phase shift in the output signal a
 
  Gain(Av) = Vout_peak/Vin_peak
 
-= 0.199/0.05 = 3.98V/V
+= 0.377/0.099 = 3.808V/V
 
-From calculations, gm = 2ID/Vov = (2* 0.5m)/ (0.8 - 0.495) = 3.278m
+From calculations, gm = 2ID/Vov = (2* 0.5m)/ (0.8 - 0.495) = 3.278m 
 
-Rout = Rd = 1.9Kohm
+Rout = Rd = 1.9 kohm
 
 Overall gain :Av = gm * Rd
 
-= 3.278m * 1.9K = 6.22V/V.
+Av= 3.278m * 1.9K = 6.22V/V.
 
 ## 3. AC analysis:
 
@@ -123,7 +160,7 @@ By applying a small-signal AC input, this analysis helps us understand how the c
 
 ![Image](https://github.com/user-attachments/assets/d20816fb-ac4d-4f22-b983-fb3e910ba630)
 
-From the graph , the gain in dB scale is 12.6dB - 3dB = 9.6dB
+From the graph , the gain in dB scale is 12.125dB - 3dB = 9.125dB
 
 4. To calculate maximum input swing and output swing
 Vincm_min = Vth1 + Vov = 0.495 + 0.4 = 0.895V
@@ -132,14 +169,19 @@ Vincm_max = VDD -(RD*Iss)/2 + Vth = 2.2 -(1.9k * 1m)/2 + 0.495 = 1.745V
 
 Therefore Vincm = (Vincm_min + Vincm_max)/2 = 1.32V
 
-and Vocm_min = Vov1 +Vov3 = (0.8 - 0.495) +0.4 = 0.705V
+and Vocm_min = Vov1 + Vov2 = (0.8 - 0.495) + 0.4 = 0.705V
 
 Vocm_max = VDD - IDRD = 2.2 -(0.5m* 1.9K) = 1.25V
 
 Therefore Vocm = (Vocm_min + Vocm_max)/2 = 0.977V
 
+![Image](https://github.com/user-attachments/assets/354c3372-f00a-4c2d-8027-dd2b26ac22f3)
 
 
+
+Here the dc offset voltage is set to 1.4V, input amplitude to 500mV, to observe the clipped output waveform.
+
+The Vo_pp (of clipped waveform) was 1.533V
 
 B) Resistor Rss replaced with current source Iss:
 
@@ -153,13 +195,45 @@ The overall performance of the circuit is improved when R3 is replaced with an a
 
 1.DC analysis - To fix the operating point (Q-point):
 
-Mosfet aspect ratio was same ie, L= 180nm, W = 6.4175um
+Mosfet aspect ratio was same ie, L= 180.1nm, W = 6.415um
+
+for mosfet  M1 & M2:
+
+VoCM = 1.25v
+
+ViCM = 1.2V
+
+Id= 0.5 mA
+
+Vtn =  0.495v
+
+VGS = 1.2 - 0.4 = 0.8v
+
+VDD = IdRd + VDS +Vp
+
+VDS = 2.2 - 0.4 - 0.95
+
+VDS = 0.85 V
+
+To verify the mosfets are in saturation region : VGD <= VTn
+
+(1.2V -1.25V) <=  0.495V
+
+-0.05V <=  0.495V
+
+and VDS >= Vov
+
+(1.25 - 0.4) >= (1.2 - 0.4) -  0.495
+
+0.85V >= 0.305Vv
 
 Verified the mosfets are in saturation region by : VGD <=Vtn and VDS >= Vov.
 
 The Q-point of both the mosfets are (0.85V, 0.5mA).
 
+
 2. Transient analysis:
+Performed the transient analysis keeping the sinusoidal voltage signal DC offset as 1.2V, amplitude 50mV , frequency 1KHz and the AC amplitude as 1V. In the configure analysis, select stop time as 5ms.
 
 ![Image](https://github.com/user-attachments/assets/db2a9ac2-22b7-437d-b5f6-cc3e2d013010)
 
@@ -174,11 +248,11 @@ From the graph,
 
 Overall Gain(Av) = Vout_peak/Vin_peak
 
-=0.1992/0.05 = 3.984V/V
+=0.3984/0.09916 = 4.01V/V
 
 From calculations, gm = 2ID/Vov = (2* 0.5m)/ (0.8 - 0.495) = 3.278m
 
-Rout = Rd = 1.9Kohm
+Rout = Rd = 1.9 Kohm
 
 Overall gain :Av = gm * Rd
 
@@ -188,7 +262,7 @@ Overall gain :Av = gm * Rd
 
 ![Image](https://github.com/user-attachments/assets/78503986-a7e7-4e81-9ca0-2eed3ec6be68)
 
-From the graph , the gain in dB scale is 12.6dB - 3dB = 9.6dB
+From the graph , the gain in dB scale is 12.129dB - 3dB = 9.129dB
 
 4. To calculate maximum input swing and output swing
 As calculated earlier,
@@ -199,7 +273,17 @@ and Vocm = (Vocm_min + Vocm_max)/2 = 0.977V
 
 Input and output at M1
 
+![Image](https://github.com/user-attachments/assets/8f4a360b-3068-4f89-90c5-5449509460b0)
+
 Input and output at both M1 and M2
+
+![Image](https://github.com/user-attachments/assets/2de31da5-593b-40a4-8925-47afb3ef5b5d)
+
+
+Here the dc offset voltage is set to 1.4V, input amplitude to 500mV, to observe the clipped output waveform.
+
+The Vo_pp (of clipped waveform) was 1.5901V
+
 
 ## C) Resistor Rss replaced with NMOSFET:
 
@@ -208,32 +292,42 @@ This configuration offers enhanced biasing and stability, outperforming a simple
 
 1.DC analysis - To fix the operating point (Q-point):
 
-![Image](https://github.com/user-attachments/assets/6e09441d-dda2-48e4-a0f0-45746c9d8690)
+![Image](https://github.com/user-attachments/assets/ff1b2bb3-a736-4da8-a325-e6125d9fa483)
 
-![Image](https://github.com/user-attachments/assets/283ac240-57ac-4b0d-b80e-07237de12d12)
+
+![Image](https://github.com/user-attachments/assets/6461a788-838b-4f54-a09e-5fc1b82af803)
+
+
+![Image](https://github.com/user-attachments/assets/bb9c7356-80f0-4ade-93c8-f49e5371f356)
+
+
 
 Here the bias voltage(gate voltge of M3) must be calculated to ensure that the mosfet is in saturation region.
 
-It is given by : Vb = Vp + Vtn Vb = 0.4V + 0.49V = 0.89V
+It is given by : Vb = Vp + Vtn 
 
-![Image](https://github.com/user-attachments/assets/b70d5a01-9a63-425d-866a-a1c950eab4df)
+Vb = 0.4V + 0.49V = 0.89V
+
 
 Verified the mosfets are in saturation region by : VGD <=Vtn and VDS >= Vov.
 
 Therefore Q-point of M3 is (0.4V, 1mA) Q-point of M1 and M2 is (0.85V, 0.5mA)
+
 
 Transient analysis:
 Performed the transient analysis keeping the sinusoidal voltage signal DC offset as 1.2V, amplitude 50mV , frequency 1KHz and the AC amplitude as 1V. In the configure analysis, select stop time as 5ms.
 
 Input and output waveforms at M1
 
+![Image](https://github.com/user-attachments/assets/3e168720-70f4-4f60-9120-33e0b9229114)
 
-![Image](https://github.com/user-attachments/assets/5ec9e246-d967-419b-8576-0f0411812fe2)
+
 
 Input and output waveforms at M1 and M2
 
 
-![Image](https://github.com/user-attachments/assets/9abd42d1-116b-4f58-821e-b6d60fcf6f7f)
+![Image](https://github.com/user-attachments/assets/72f60017-8e5b-4c9d-93f6-b9a4879bc3f4)
+
 
 From the graph ,we can observe the 180 degree phase shift in the output signal and the output voltage (at Vocm node) is amplified
 
@@ -241,7 +335,7 @@ Input voltage amplitude given was 50mV.
 
 From the graph,
 
-Overall Gain(Av) = Vout_peak/Vin_peak = 0.1992V/0.05V = 3.984V/V
+Overall Gain(Av) = Vout_peak/Vin_peak = 0.3979V/0.099V = 4.019V/V
 
 From calculations, gm = 2ID/Vov = (2* 0.5m)/ (0.8 - 0.495) = 3.278m
 
@@ -253,19 +347,95 @@ Overall gain :Av = gm * Rd
 
 3.AC analysis:
 
-![Image](https://github.com/user-attachments/assets/e6a9f3c1-ed44-4628-9fc1-8f12767e0d65)
 
-rom the graph , the gain in dB scale is 12.6dB - 3dB = 9.6dB
+![Image](https://github.com/user-attachments/assets/c6f0ddb5-5a9e-4e07-97d5-95a6990e68ba)
 
-. To calculate maximum input swing and output swing
+
+rom the graph , the gain in dB scale is 12.129dB - 3dB = 9.129dB
+
+To calculate maximum input swing and output swing
 As calculated earlier,
 
 Vincm = (Vincm_min + Vincm_max)/2 = 1.32V
 
 and Vocm = (Vocm_min + Vocm_max)/2 = 0.977V
 
-Here the dc offset voltage is set to 1.32V, input amplitude to 500mV, to observe the clipped output waveform.
+Input and output at M1
 
-Results and conclusion
+![Image](https://github.com/user-attachments/assets/e4d1093b-84ba-401b-8d72-437543fcc515)
 
-Inference:
+
+Input and output at both M1 and M2
+
+![Image](https://github.com/user-attachments/assets/40b98915-9e61-46d8-8df7-9256ee1e4bb7)
+
+
+Here the dc offset voltage is set to 1.4V, input amplitude to 500mV, to observe the clipped output waveform.
+
+The Vo_pp (of clipped waveform) was 1.617V.
+
+
+Inference: 
+
+
+With Resistor (Rss) as Tail Current Source:
+
+Moderate Differential Gain: The differential gain is limited by the resistor (Rss) because the tail current is fixed and affected by the resistance value. A resistor in the tail limits the current that flows through the differential pair, reducing the overall amplification.
+
+Reason: The resistor in the tail does not actively control the current, so its value directly impacts the current flowing through the differential pair, limiting the overall gain.
+
+Reduced Output Voltage Swing:  
+The output swing is constrained due to the voltage drop across the tail resistor (Rss). As the output voltage approaches the supply voltage, the current through the resistor drops, reducing the available headroom for the output signal.
+
+Reason: The voltage drop across Rss eats up a significant portion of the available headroom, which limits how far the output can swing before reaching supply limits.
+
+Low Common-Mode Rejection Ratio (CMRR):  The CMRR is low because the tail resistor provides a low impedance, which allows common-mode signals to affect both sides of the differential pair in a similar manner.
+
+Reason: The low impedance of the resistor doesn’t sufficiently isolate the differential pair from common-mode signals. Therefore, both the positive and negative inputs are more likely to be affected by common-mode interference, reducing the CMRR.
+
+ With  Current Source (Iss) as Tail Current Source:
+
+Higher Differential Gain:  
+  The ideal current source provides a constant tail current, improving differential gain by maintaining a steady current that flows through the differential pair, resulting in greater amplification.
+
+Reason: The constant tail current ensures that the differential pair operates within its optimal region. This enables the circuit to amplify signals more efficiently, resulting in higher gain.
+
+Improved Output Voltage Swing:  
+  An ideal current source increases the available headroom for the output swing by maintaining a constant current, regardless of fluctuations in the load or voltage at the output.
+
+  Reason: The ideal current source doesn’t experience voltage drops like the resistor does. Thus, more of the supply voltage is available for the output swing, allowing the signal to swing more freely.
+
+ Higher CMRR:  
+  The ideal current source has high impedance, which helps isolate the differential pair from common-mode signals, improving the CMRR.
+
+  Reason: The high impedance of the ideal current source ensures that the tail current remains unaffected by fluctuations in the power supply or common-mode signals. This results in better rejection of common-mode interference, leading to a higher CMRR.
+
+
+
+With NMOS Current Source as Tail Current Source:
+
+Highest Differential Gain:  
+  The NMOS current source provides an active current source with high impedance. This setup allows the differential pair to operate at its maximum potential, resulting in the highest differential gain.
+
+  Reason: The high impedance of the NMOS current source minimizes current variations, ensuring that the differential pair is consistently biased for maximum amplification. The active current source optimizes the current flow, leading to the highest possible differential gain.
+
+Best Output Voltage Swing:  
+  The NMOS current source minimizes the voltage drop in the tail, which allows the output swing to be the widest. This minimizes voltage loss, keeping more of the supply voltage available for the output.
+
+  Reason: Because the NMOS current source is an active device with high impedance, it doesn't drop as much voltage across itself as a resistor would. This leaves more room for the output signal to swing before hitting supply limits.
+
+
+Maximum CMRR:  
+  The NMOS current source provides the highest CMRR because it offers superior isolation from supply variations and common-mode signals.
+
+  Reason: The NMOS current source, being an active component with high impedance, better isolates the differential pair from power supply fluctuations and common-mode interference. This isolation leads to the best common-mode rejection performance, ensuring that the circuit rejects unwanted signals more effectively.
+
+
+Summary of Reasons:
+
+- Resistor (Rss): Limits current flow, reduces output swing, and provides low impedance, making it less effective at rejecting common-mode signals.
+- Ideal Current Source: Provides a constant current, improving gain, output swing, and CMRR due to its high impedance.
+- NMOS Current Source: Acts as an active high-impedance source, leading to the best performance in terms of differential gain, output swing, and common-mode 
+  rejection, thanks to better biasing and isolation from interference.
+
+
