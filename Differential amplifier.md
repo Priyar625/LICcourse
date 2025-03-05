@@ -1,5 +1,51 @@
 ## Experiment-3 : Design and Analysis of MOS differential amplifier circuit
 ## Aim of the experiment: Design and analyse differential amplifier circuit for the following specifications:
+
+## theory
+
+Differential amplifiers apply gain not to one input signal but to the difference between two input signals. This means that a differential amplifier naturally eliminates noise or interference that is present in both input signals.
+Differential amplification also suppresses common-mode signals—in other words, a DC offset that is present in both input signals will be removed, and the gain will be applied only to the signal of interest (assuming, of course, that the signal of interest is not present in both inputs). This is particularly advantageous in the context of IC design because it eliminates the need for bulky DC-blocking capacitors.
+The subtraction that occurs in a differential pair makes it easy to incorporate the circuit into a negative-feedback amplifier
+
+![Image](https://github.com/user-attachments/assets/561bdd8c-9581-438d-99c2-5fdfc97dbf0f)
+
+DC Analysis
+
+The given circuit is a differential amplifier using MOSFETs. significance of each component:
+
+1. Q1 & Q2 (MOSFETs): These two transistors form the differential pair. They compare the input signals VIN1 and VIN2 and amplify the difference between them.
+
+2. R1 and R2 (Load Resistors): These resistors convert the drain currents of Q1 and Q2 into output voltages V_OUT1 and V_OUT2. They play a role in setting the gain of the amplifier.
+
+3. I_BIAS (Current Source): This component provides a constant current, which is split between Q1 and Q2 depending on their gate voltages. It stabilizes the operation and determines the total current flowing through the circuit.
+
+4. Power Supply (+V and -V): The positive supply voltage (+V) powers the drain terminals of Q1 and Q2, while the negative voltage (-V) is used for the current source.
+
+5. V_IN1 and V_IN2 (Input Signals): These are the differential input signals applied to the gates of Q1 and Q2. The circuit amplifies the voltage difference between these inputs.
+
+6. V_OUT1 and V_OUT2 (Output Signals): These nodes provide the amplified differential output signals.
+
+Overall Function
+This differential amplifier is used in applications such as:
+- Amplifying small differential signals while rejecting common-mode noise.
+- Serving as an input stage in operational amplifiers.
+- Acting as a comparator in analog circuits.
+
+
+Let’s determine the biasing conditions of this circuit when both inputs are grounded.
+
+![Image](https://github.com/user-attachments/assets/daca79f0-f2ba-491f-b97f-1de4b7077244)
+
+The sum of the two drain currents ID1 and ID2 must equal IBIAS. We also know that the two drain currents are equal because, in this idealized analysis, both halves of the circuit are identical. Thus,
+
+![Image](https://github.com/user-attachments/assets/d99e4864-8f3b-499f-b912-ece831a8f00d)
+
+ Let’s assume for the moment that the transistors are in saturation. The equation for saturation-mode drain current is the following:
+
+ 
+ ![Image](https://github.com/user-attachments/assets/f8287929-7685-4dfe-b68a-580a1cab1b56)
+
+
 ## design question
 VDD= 2.2V , P<=2.2mW , Vincm =1.2V , Vocm = 1.25V , Vp = 0.4V Perform: DC analysis, transient analysis, frequency response and extract the parameters.
 solution: we know that P= VddIss 
@@ -26,31 +72,33 @@ Rss = Vp/Iss = 0.4/1m = 400ohm
 
 ## circuit diagram:
 
-A)With Resistor Rss
+## A)With Resistor Rss
 
 ![Image](https://github.com/user-attachments/assets/c5af35e1-b7e7-46fb-b2f6-1d6e87a24baa)
 
 
-B) Resistor Rss replaced with current source Iss
+## B) Resistor Rss replaced with current source Iss
 
 ![Image](https://github.com/user-attachments/assets/dc943035-c6b9-4506-abb8-ec60469c6384)
 
-C) Resistor Rss replaced with NMOSFET
+
+## C) Resistor Rss replaced with NMOSFET
 
 ![Image](https://github.com/user-attachments/assets/24fda4ed-8ffa-4cef-ac81-d074c0d0fd79)
 
-## Analysis of the circuit
 
-Design and analysis
 
-A) With Resistor Rss:
+## Design and analysis
+
+## A) With Resistor Rss:
+
 The circuit is intended to eliminate common-mode signals.
 
 It amplifies only the differential signal between VinCM1 and VinCM2.
 
 The output voltage range is restricted by the supply voltage (VDD) and the transistor's saturation conditions.
 
-1.DC Analysis- To fix the operating point (Q-point):
+## 1.DC Analysis- To fix the operating point (Q-point):
 
 ![Image](https://github.com/user-attachments/assets/c5af35e1-b7e7-46fb-b2f6-1d6e87a24baa)
 
@@ -125,7 +173,7 @@ The Q-points of both the mosfets(M1 and M2) are (0.85V, 0.5mA)
 
 so, there is a slight variation in the Q-point as (0.6456V, 0.576mA)
 
-##Transient Analysis: 
+## Transient Analysis: 
 
 In LTSpice, transient analysis is used to model how a circuit responds over time to varying inputs like pulses, sine waves, or step functions. 
 This type of analysis is essential in high-speed applications, as it helps assess important factors such as rise time, fall time, and propagation delay, which determine the amplifier’s ability to handle fast signals.
@@ -183,17 +231,20 @@ Here the dc offset voltage is set to 1.4V, input amplitude to 500mV, to observe 
 
 The Vo_pp (of clipped waveform) was 1.533V
 
-B) Resistor Rss replaced with current source Iss:
+## B) Resistor Rss replaced with current source Iss:
+
 
 Using an active current source in place of R3 enhances both the gain and the Common-Mode Rejection Ratio (CMRR). 
 The overall performance of the circuit is improved when R3 is replaced with an active current source.
 
+
 ![Image](https://github.com/user-attachments/assets/d7fc5df6-5a6b-4199-9a8e-05766cf23acb)
+
 
 ![Image](https://github.com/user-attachments/assets/b45daff0-f1f0-4484-a09b-7843cefa1205)
 
 
-1.DC analysis - To fix the operating point (Q-point):
+## 1.DC analysis - To fix the operating point (Q-point):
 
 Mosfet aspect ratio was same ie, L= 180.1nm, W = 6.415um
 
@@ -232,7 +283,7 @@ Verified the mosfets are in saturation region by : VGD <=Vtn and VDS >= Vov.
 The Q-point of both the mosfets are (0.85V, 0.5mA).
 
 
-2. Transient analysis:
+## 2. Transient analysis:
 Performed the transient analysis keeping the sinusoidal voltage signal DC offset as 1.2V, amplitude 50mV , frequency 1KHz and the AC amplitude as 1V. In the configure analysis, select stop time as 5ms.
 
 ![Image](https://github.com/user-attachments/assets/db2a9ac2-22b7-437d-b5f6-cc3e2d013010)
@@ -258,7 +309,7 @@ Overall gain :Av = gm * Rd
 
 = 3.278m * 1.9K = 6.22V/V.
 
-3.AC analysis:
+## 3.AC analysis:
 
 ![Image](https://github.com/user-attachments/assets/78503986-a7e7-4e81-9ca0-2eed3ec6be68)
 
@@ -290,7 +341,7 @@ The Vo_pp (of clipped waveform) was 1.5901V
 When the tail resistor (R3) is replaced with an NMOS current source, the differential amplifier shows better performance, including higher gain, a wider output swing, and improved common-mode rejection. 
 This configuration offers enhanced biasing and stability, outperforming a simple resistor or an ideal current source.
 
-1.DC analysis - To fix the operating point (Q-point):
+## 1.DC analysis - To fix the operating point (Q-point):
 
 ![Image](https://github.com/user-attachments/assets/ff1b2bb3-a736-4da8-a325-e6125d9fa483)
 
@@ -314,7 +365,7 @@ Verified the mosfets are in saturation region by : VGD <=Vtn and VDS >= Vov.
 Therefore Q-point of M3 is (0.4V, 1mA) Q-point of M1 and M2 is (0.85V, 0.5mA)
 
 
-Transient analysis:
+## Transient analysis:
 Performed the transient analysis keeping the sinusoidal voltage signal DC offset as 1.2V, amplitude 50mV , frequency 1KHz and the AC amplitude as 1V. In the configure analysis, select stop time as 5ms.
 
 Input and output waveforms at M1
@@ -345,7 +396,7 @@ Overall gain :Av = gm * Rd
 
 = 3.278m * 1.9K = 6.22V/V
 
-3.AC analysis:
+## 3.AC analysis:
 
 
 ![Image](https://github.com/user-attachments/assets/c6f0ddb5-5a9e-4e07-97d5-95a6990e68ba)
@@ -375,7 +426,7 @@ Here the dc offset voltage is set to 1.4V, input amplitude to 500mV, to observe 
 The Vo_pp (of clipped waveform) was 1.617V.
 
 
-Inference: 
+## Inference: 
 
 
 With Resistor (Rss) as Tail Current Source:
