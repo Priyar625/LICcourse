@@ -1,5 +1,5 @@
 ## Experiment-3 : Design and Analysis of MOS differential amplifier circuit
-## Aim of the experiment: Design and analyse differential amplifier circuit for the following specifications:
+
 
 ## theory
 
@@ -45,6 +45,7 @@ The sum of the two drain currents ID1 and ID2 must equal IBIAS. We also know tha
  
  ![Image](https://github.com/user-attachments/assets/f8287929-7685-4dfe-b68a-580a1cab1b56)
 
+## Aim of the experiment: Design and analyse differential amplifier circuit for the following specifications:
 
 ## design question
 VDD= 2.2V , P<=2.2mW , Vincm =1.2V , Vocm = 1.25V , Vp = 0.4V Perform: DC analysis, transient analysis, frequency response and extract the parameters.
