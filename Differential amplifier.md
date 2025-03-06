@@ -85,8 +85,8 @@ Rss = Vp/Iss = 0.4/1m = 400ohm
 
 ## C) Resistor Rss replaced with NMOSFET
 
-![Image](https://github.com/user-attachments/assets/24fda4ed-8ffa-4cef-ac81-d074c0d0fd79)
 
+![Image](https://github.com/user-attachments/assets/ff1b2bb3-a736-4da8-a325-e6125d9fa483)
 
 
 ## Design and analysis
