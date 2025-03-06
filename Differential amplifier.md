@@ -212,13 +212,13 @@ By applying a small-signal AC input, this analysis helps us understand how the c
 From the graph , the gain in dB scale is 12.125dB - 3dB = 9.125dB
 
 4. To calculate maximum input swing and output swing
-Vincm_min = Vth1 + Vov = 0.495 + 0.4 = 0.895V
+Vincm_min = Vth1 + Vp = 0.495 + 0.4 = 0.895V
 
 Vincm_max = VDD -(RD*Iss)/2 + Vth = 2.2 -(1.9k * 1m)/2 + 0.495 = 1.745V
 
 Therefore Vincm = (Vincm_min + Vincm_max)/2 = 1.32V
 
-and Vocm_min = Vov1 + Vov2 = (0.8 - 0.495) + 0.4 = 0.705V
+and Vocm_min = Vov1 + Vp = (0.8 - 0.495) + 0.4 = 0.705V
 
 Vocm_max = VDD - IDRD = 2.2 -(0.5m* 1.9K) = 1.25V
 
