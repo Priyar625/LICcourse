@@ -344,10 +344,12 @@ This configuration offers enhanced biasing and stability, outperforming a simple
 
 ## 1.DC analysis - To fix the operating point (Q-point):
 
-![Image](https://github.com/user-attachments/assets/ff1b2bb3-a736-4da8-a325-e6125d9fa483)
+![Image](https://github.com/user-attachments/assets/d0ca7d7e-14a1-4ab2-bcfc-c58da89a254d)
 
 
-![Image](https://github.com/user-attachments/assets/6461a788-838b-4f54-a09e-5fc1b82af803)
+
+![Image](https://github.com/user-attachments/assets/3d28b4e4-899d-4bbd-8c40-a745ab575743)
+
 
 
 ![Image](https://github.com/user-attachments/assets/bb9c7356-80f0-4ade-93c8-f49e5371f356)
@@ -371,14 +373,13 @@ Performed the transient analysis keeping the sinusoidal voltage signal DC offset
 
 Input and output waveforms at M1
 
-![Image](https://github.com/user-attachments/assets/3e168720-70f4-4f60-9120-33e0b9229114)
+![Image](https://github.com/user-attachments/assets/7a29fc35-d52c-477d-b9f7-0709567fc18a)
 
 
 
 Input and output waveforms at M1 and M2
 
-
-![Image](https://github.com/user-attachments/assets/72f60017-8e5b-4c9d-93f6-b9a4879bc3f4)
+![Image](https://github.com/user-attachments/assets/14218f95-b7db-4bea-a769-28bd1996e218)
 
 
 From the graph ,we can observe the 180 degree phase shift in the output signal and the output voltage (at Vocm node) is amplified
@@ -400,7 +401,7 @@ Overall gain :Av = gm * Rd
 ## 3.AC analysis:
 
 
-![Image](https://github.com/user-attachments/assets/c6f0ddb5-5a9e-4e07-97d5-95a6990e68ba)
+![Image](https://github.com/user-attachments/assets/773fcc15-0858-4acb-9ab9-7cb532a85a9c)
 
 
 rom the graph , the gain in dB scale is 12.129dB - 3dB = 9.129dB
